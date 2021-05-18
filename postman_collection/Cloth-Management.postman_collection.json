@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "b619d14b-014d-4564-a60d-89c0d77baef5",
+		"name": "Cloth-Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gaurav Das\",\n    \"email\": \"gauravdas00@gmail.com\",\n    \"phone\": \"52365222\",\n    \"address\": \"India\",\n    \"role\": \"user\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://cloth-management.herokuapp.com/api/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"cloth-management",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"52365222\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://cloth-management.herokuapp.com/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"cloth-management",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cloth",
+			"item": [
+				{
+					"name": "Get All Clothes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://cloth-management.herokuapp.com/api/v1/cloth",
+							"protocol": "http",
+							"host": [
+								"cloth-management",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cloth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cloth by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://cloth-management.herokuapp.com/api/v1/cloth/60a2f214040fda6c42069cc7",
+							"protocol": "http",
+							"host": [
+								"cloth-management",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cloth",
+								"60a2f214040fda6c42069cc7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cloth by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTM1YTNhN2Y3YjhkMDAxNTQ1NWUwZiIsImlhdCI6MTYyMTMxODIwMywiZXhwIjoxNjI5MDk0MjAzfQ.5v4Mka5z8Is68Nglr8enBBKJo0HPN1nXTjFZqqPXQRs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Shirt\",\n    \"quantity\": 12,\n    \"price\": \"349\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://cloth-management.herokuapp.com/api/v1/cloth/60a2f214040fda6c42069cc7",
+							"protocol": "http",
+							"host": [
+								"cloth-management",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cloth",
+								"60a2f214040fda6c42069cc7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cloth by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTJjMjM2Mzk5MTdhMzM5ZjMyOTRhNSIsImlhdCI6MTYyMTI4MTU5MywiZXhwIjoxNjI5MDU3NTkzfQ.z9qxOvupE2w0HtEoQNg24Mprf7c-SG3SOcqxImyI_Ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://cloth-management.herokuapp.com/api/v1/cloth/60a2c163650ec0317bdb34fb",
+							"protocol": "http",
+							"host": [
+								"cloth-management",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cloth",
+								"60a2c163650ec0317bdb34fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Cloth",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTM1YTNhN2Y3YjhkMDAxNTQ1NWUwZiIsImlhdCI6MTYyMTMxODIwMywiZXhwIjoxNjI5MDk0MjAzfQ.5v4Mka5z8Is68Nglr8enBBKJo0HPN1nXTjFZqqPXQRs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Shirt\",\n    \"quantity\": 10,\n    \"price\": \"499\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://cloth-management.herokuapp.com/api/v1/cloth",
+							"protocol": "http",
+							"host": [
+								"cloth-management",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cloth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Cloth Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTJjMjM2Mzk5MTdhMzM5ZjMyOTRhNSIsImlhdCI6MTYyMTI5MDIxMiwiZXhwIjoxNjI5MDY2MjEyfQ.gFEOKUzPVsICKkSaC9HBekhP3k-Q-X32t7H_EV5uAuc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/gaurav/Downloads/nature.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://cloth-management.herokuapp.com/api/v1/cloth/image/60a2ed0269e5575e26837037",
+							"protocol": "http",
+							"host": [
+								"cloth-management",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cloth",
+								"image",
+								"60a2ed0269e5575e26837037"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

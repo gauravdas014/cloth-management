@@ -16,6 +16,7 @@ The Code Structure of the repository is as follows:
 ├── models
 │   ├── clothModel.js
 │   └── userModel.js
+├── postman_collection
 ├── public
 │   └── images
 ├── routes
