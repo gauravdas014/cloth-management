@@ -52,3 +52,5 @@ The starting point of the application is `server.js` where we have connected the
 Models folder contains the schemas and controllers are the brain part of the application.
 All application and business logic is present there. The `routes` folder has been created separately
 so that we can separate application logic and the paths to different endpoints.
+
+The postman collection of the API can be found in the folder `postman_collection`
